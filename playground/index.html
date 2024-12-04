@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gemini Nano - Playground</title>
+  <!-- Translator API --->
+  <meta http-equiv="origin-trial" content="AuhWON7sKIWoaOHIRdU8qJ8nOX7FxXvSFJA1boHAFbkSfUzWez08Jrx8nJ/2dWWsfSH9j97CMQhBI3M16aUPfgQAAABpeyJvcmlnaW4iOiJodHRwczovL2dlbWluaS1uYW5vLXBsYXlncm91bmQudmVyY2VsLmFwcDo0NDMiLCJmZWF0dXJlIjoiVHJhbnNsYXRpb25BUEkiLCJleHBpcnkiOjE3NTMxNDI0MDB9" />
+
+  <!-- Summarization API --->
+  <meta http-equiv="origin-trial" content="AnbQKJ1k5QemfmYvAcoMvxQ1urombEwHh11OO2yFjMKk09JWIwJYewlAPYBzJpkj1c2WMgl+ZSdt0zVqX9s10QYAAABteyJvcmlnaW4iOiJodHRwczovL2dlbWluaS1uYW5vLXBsYXlncm91bmQudmVyY2VsLmFwcDo0NDMiLCJmZWF0dXJlIjoiQUlTdW1tYXJpemF0aW9uQVBJIiwiZXhwaXJ5IjoxNzUzMTQyNDAwfQ==" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>  
+  <header class="px-6 py-3 border-b border-slate-200 mb-6 flex justify-between items-center">
+    <h1 class="text-2xl font-normal">
+      <span class="google-text-blue">G</span><span class="google-text-red">e</span><span class="google-text-yellow">mi</span><span class="google-text-blue">ni</span> <span class="google-text-green">Na</span><span class="google-text-red">no</span> <span class="text-slate-500">Playground</span>            
+    </h1>    
+    <a href="/" class="general-text-color">Summarizer</a>    
+  </header>  
+
+  <div class="app-container px-6">    
+
+    <div>
+      <div class="px-4 sm:px-0 mb-1">
+        <h3 class="font-normal text-base general-text-color">Check API and Model Availability On Your Google Canary</h3>        
+      </div>
+
+      <div class="px-4 sm:px-0 mb-4">
+        <table class="text-sm text-left">
+          <tr>
+            <th class="py-0.5 font-light general-text-color">Translation API:</th>
+            <td class="py-0.5">
+              <span id="isSupportTranslationAPI" class="ml-1.5"></span>
+            </td>
+          </tr>
+          <tr>
+            <th class="py-0.5 font-light general-text-color">AI API:</th>
+            <td class="py-0.5">
+              <span id="isSupportAiAPI" class="ml-1.5"></span>
+            </td>
+          </tr>
+          <tr>
+            <th class="py-0.5 font-light general-text-color">Summarizer API:</th>
+            <td class="py-0.5">
+              <span id="isSupportSummarizerAPI" class="ml-1.5"></span>
+            </td>
+          </tr>
+          <tr>
+            <th class="py-0.5 font-light general-text-color">Summarizer Capabilities:</th>
+            <td class="py-0.5">
+              <span id="isSupportSummerizerCapabilities" class="ml-1.5"></span>
+            </td>
+          </tr>
+          <tr>
+            <th class="py-0.5 font-light general-text-color">Prompt API:</th>
+            <td class="py-0.5">
+              <span id="isSupportPromptAPI" class="ml-1.5"></span>
+            </td>
+          </tr>
+          <tr>
+            <th class="py-0.5 font-light general-text-color">AI Model:</th>
+            <td class="py-0.5">
+              <span id="isSupportAiModel" class="ml-1.5"></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+      
+          
+    </div>
+    
+    <details class="mb-8 p-4 bg-slate-50 rounded-lg">
+      <summary class="font-normal text-base cursor-pointer general-text-color">
+        How to Enable Experimental features in Google Canary
+      </summary>
+      <div class="mt-4">
+        <ol class="list-decimal list-inside mb-4 font-light general-text-color">
+          <li>Download the latest version of Google Canary</li>
+          <li>Type <code>chrome://flags</code> in the address bar</li>
+          <li>Enabled without language pack limit "Experimental translation API"</li>
+          <li>Enable "Prompt API for Gemini Nano"</li>
+          <li>Enable "Summarization API for Gemini Nano"</li>    
+          <li>Enable "Writer API for Gemini Nano"</li>
+          <li>Enable "Rewriter API for Gemini Nano"</li>                
+          <li>Enabled BypassPerfRequirement "Enables optimization guide on device" (It will download the Gemini Nano
+            model in the background)</li>
+          <li>Restart the browser</li>
+          <li>Type <code>chrome://components</code> in the address bar and update "Optimization Guide On Device Model"</li>
+        </ol>        
+      </div>
+    </details>    
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      <div class="rounded-lg border border-slate-200 p-6">
+        <h2 class="text-xl font-normal mb-4 general-text-color">Summarizer & Translation API</h2>        
+        <textarea id="summarizeTranslatorInput" class="w-full p-3 border rounded-lg mb-4 font-light text-base general-text-color outline-none" rows="4"
+          placeholder="Enter text to summarize and translate..."></textarea>
+        <select id="targetSummarizeTranslatorLanguage" class="w-full p-2 border rounded-lg mb-4 font-light text-base general-text-color outline-none">
+          <option value="zh-Hant">Chinese</option>
+          <option value="es">Spanish</option>          
+          <option value="ja">Japanese</option>          
+        </select>
+        <div class="flex justify-end">
+          <button id="summarizeTranslateButton"
+          class="google-btn-blue px-4 py-2 rounded-full transition-colors text-base font-normal disabled:cursor-not-allowed disabled:opacity-60">Summarize & Translate</button>
+        </div>        
+        <div class="result-container result-container-bg mt-4 p-4 rounded-lg relative hidden">          
+          <div id="summarizeTranslatorResult" class="font-light"></div>          
+          <div class="flex justify-end">
+            <button class="copy-button rounded-full p-2 bg-transparent hover:bg-slate-200 active:bg-slate-300 transition-all" data-element-id="summarizeTranslatorResult">
+              <span class="copy-svg"></span>              
+            </button>
+          </div>          
+        </div>
+      </div>
+
+      <div class="rounded-lg border border-slate-200 p-6">
+        <h2 class="text-xl font-normal mb-4 general-text-color">Translation API</h2>        
+        <textarea id="translatorInput" class="w-full p-3 border rounded-lg mb-4 font-light text-base general-text-color outline-none" rows="4"
+          placeholder="Enter text to translate..."></textarea>
+        <select id="targetLanguage" class="w-full p-2 border rounded-lg mb-4 font-light text-base general-text-color outline-none">
+          <option value="zh-Hant">Chinese</option>
+          <option value="es">Spanish</option>          
+          <option value="ja">Japanese</option>          
+        </select>
+        <div class="flex justify-end">
+          <button id="translateButton"
+          class="google-btn-blue px-4 py-2 rounded-full transition-colors text-base font-normal disabled:cursor-not-allowed disabled:opacity-60">Translate</button>
+        </div>        
+        <div class="result-container result-container-bg mt-4 p-4 rounded-lg relative hidden">          
+          <div id="translatorResult" class="font-light"></div>          
+          <div class="flex justify-end">
+            <button class="copy-button rounded-full p-2 bg-transparent hover:bg-slate-200 active:bg-slate-300 transition-all" data-element-id="translatorResult">
+              <span class="copy-svg"></span>              
+            </button>
+          </div>          
+        </div>
+      </div>
+
+      <div class="rounded-lg border border-slate-200 p-6">
+        <h2 class="text-xl font-normal mb-4 general-text-color">Summarizer API</h2>        
+        <textarea id="summarizerInput" class="w-full p-3 border rounded-lg mb-4 font-light text-base general-text-color outline-none" rows="6"
+          placeholder="Enter text to summarize..."></textarea>
+        <div class="grid lg:grid-cols-3 gap-3">
+          <div>
+            <label for="summarizeType" class="block mb-1 general-text-color text-base">Type</label>
+            <select id="summarizeType" class="w-full p-2 border rounded-lg mb-4 font-light text-base general-text-color outline-none">
+              <option value="key-points">Key Points</option>
+              <option value="tl;dr">TL;DR</option>
+              <option value="teaser">teaser</option>
+              <option value="headline">Headline</option>
+            </select>
+          </div>
+          <div>
+            <label for="summarizeFormat" class="block mb-1 general-text-color">Format</label>
+            <select id="summarizeFormat" class="w-full p-2 border rounded-lg mb-4 font-light text-base general-text-color outline-none">
+              <option value="markdown">Markdown</option>
+              <option value="plain-text">Plain Text</option>
+            </select>
+          </div>
+          <div>
+            <label for="summarizeLength" class="block mb-1 general-text-color">Length</label>
+            <select id="summarizeLength" class="w-full p-2 border rounded-lg mb-4 font-light text-base general-text-color outline-none">
+              <option value="short">Short</option>
+              <option value="medium">Medium</option>
+              <option value="long">Long</option>
+            </select>
+          </div>
+        </div>      
+
+        <div class="flex justify-end">
+          <button id="summarizeButton"
+          class="google-btn-blue px-4 py-2 rounded-full transition-colors text-base font-normal disabled:cursor-not-allowed disabled:opacity-60">Summarize</button>
+        </div>                
+
+        <div class="result-container result-container-bg mt-4 p-4 rounded-lg relative hidden">          
+          <div id="summarizerResult" class="font-light"></div>          
+          <div class="flex justify-end">
+            <button class="copy-button rounded-full p-2 bg-transparent hover:bg-slate-200 active:bg-slate-300 transition-all" data-element-id="summarizerResult">
+              <span class="copy-svg"></span>              
+            </button>
+          </div>          
+        </div>                   
+      </div>
+
+      <div class="rounded-lg border border-slate-200 p-6">
+        <h2 class="text-xl font-normal mb-4 general-text-color">Prompt API</h2> 
+        <div class="result-container">
+          <div id="chatMessages" class="mb-4 h-64 overflow-y-auto border rounded p-3 font-light"></div>
+        </div>               
+
+        <textarea id="promptInput" class="w-full p-3 border rounded-lg mb-4 font-light text-base general-text-color outline-none" rows="4"
+          placeholder="Type your message...."></textarea>        
+        <div class="flex justify-end">
+          <button id="sendPromptId" class="google-btn-blue px-4 py-2 rounded-full transition-colors text-base font-normal disabled:cursor-not-allowed disabled:opacity-60">Send</button>
+        </div>        
+
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/playground/main.js"></script>  
+</body>
+
+</html>

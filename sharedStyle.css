@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --google-btn-bg-blue: rgb(26, 115, 232);
+  --google-btn-bg-blue-hover: rgb(11, 87, 208);
+  --google-btn-bg-blue-active: rgba(11, 87, 208, 0.85);
+  --google-btn-text-color: #ffffff;
+  --result-container-bg: rgb(241 245 249);
+  --general-text-color: rgb(71 85 105);
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;    
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.general-text-color {
+  color: var(--general-text-color);
+}
+
+.google-btn-blue {
+  background-color: var(--google-btn-bg-blue);
+  color: var(--google-btn-text-color);
+}
+
+.google-btn-blue:hover {
+  background-color: var(--google-btn-bg-blue-hover);
+}
+
+.google-btn-blue:active {
+  background-color: var(--google-btn-bg-blue-active);
+}
+
+.google-btn-blue:disabled {
+  background-color: var(--google-btn-bg-blue);
+}
+
+.google-text-blue {
+  color: #4285F4;
+}
+
+.google-text-red {
+  color: #EA4335;
+}
+
+.google-text-yellow {
+  color: #FBBC05;
+}
+
+.google-text-green {  
+  color: #34A853;
+}
+
+.app-container {
+  max-width: 1280px;
+  margin: 0 auto;  
+}
+
+.result-container p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.result-container ul,
+.result-container ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.result-container ul {  
+  list-style-type: disc;    
+}
+
+.result-container ol {  
+  list-style-type: decimal;  
+}
+
+.copy-svg {
+  cursor: pointer;
+  display: block;
+  background-image: url('/copy_icon.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;  
+}
+
+.result-container-bg {
+  background-color: var(--result-container-bg);
+}

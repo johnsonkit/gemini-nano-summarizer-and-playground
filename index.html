@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gemini Nano - Summarizer</title>
+  <!-- Translator API --->
+  <meta http-equiv="origin-trial" content="AuhWON7sKIWoaOHIRdU8qJ8nOX7FxXvSFJA1boHAFbkSfUzWez08Jrx8nJ/2dWWsfSH9j97CMQhBI3M16aUPfgQAAABpeyJvcmlnaW4iOiJodHRwczovL2dlbWluaS1uYW5vLXBsYXlncm91bmQudmVyY2VsLmFwcDo0NDMiLCJmZWF0dXJlIjoiVHJhbnNsYXRpb25BUEkiLCJleHBpcnkiOjE3NTMxNDI0MDB9" />
+
+  <!-- Summarization API --->
+  <meta http-equiv="origin-trial" content="AnbQKJ1k5QemfmYvAcoMvxQ1urombEwHh11OO2yFjMKk09JWIwJYewlAPYBzJpkj1c2WMgl+ZSdt0zVqX9s10QYAAABteyJvcmlnaW4iOiJodHRwczovL2dlbWluaS1uYW5vLXBsYXlncm91bmQudmVyY2VsLmFwcDo0NDMiLCJmZWF0dXJlIjoiQUlTdW1tYXJpemF0aW9uQVBJIiwiZXhwaXJ5IjoxNzUzMTQyNDAwfQ==" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <header class="px-6 py-3 border-b border-slate-200 mb-6 flex justify-between items-center">
+    <h1 class="text-2xl font-normal">
+      <span class="google-text-blue">G</span><span class="google-text-red">e</span><span class="google-text-yellow">mi</span><span class="google-text-blue">ni</span> <span class="google-text-green">Na</span><span class="google-text-red">no</span> <span class="text-slate-500">Summarizer</span>            
+    </h1>    
+    <a href="/playground/" class="general-text-color">Playground</a>    
+  </header>  
+  <div class="app-container px-6">
+    <div class="md:grid md:grid-cols-2 gap-8">
+      <div>
+        <textarea id="textInput" rows="8" placeholder="Enter text to summarize"
+          class=" border border-slate-200 rounded-lg w-full p-4 text-xl font-light general-text-color outline-none"></textarea>
+        <div class="flex justify-between items-center">
+          <div>
+            <select id="targetLanguage" class="w-full text-base font-light general-text-color outline-none">
+              <option value="zh-Hant">Chinese</option>
+              <option value="es">Spanish</option>          
+              <option value="ja">Japanese</option>          
+            </select>
+          </div>
+          <div id="characterCount" class="text-xs text-slate-500">0 / 5,000</div>
+        </div>
+      </div>
+      <div>
+        <div class="result-container result-container-bg mt-4 md:mt-0 p-4 rounded-lg relative hidden">          
+          <div id="result" class="font-light"></div>          
+          <div class="flex justify-end">
+            <button class="copy-button rounded-full p-2 bg-transparent hover:bg-slate-200 active:bg-slate-300 transition-all" data-element-id="result">
+              <span class="copy-svg"></span>              
+            </button>
+          </div>          
+        </div>
+      </div>      
+    </div>
+    
+  </div>
+  
+  
+  <script type="module" src="/main.js"></script>  
+</body>
+
+</html>
