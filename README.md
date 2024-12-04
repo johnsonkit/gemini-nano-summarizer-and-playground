@@ -2,6 +2,10 @@
 
 The application provides a versatile interface for summarizing English content and translating it into local languages like Chinese, Spanish, and Japanese. It features two pages: the Summarize page and the Playground page, offering various interaction methods.
 
+[Live Demo](https://gemini-nano-playground.vercel.app/)
+
+## Screenshots
+
 ![Summarize Page](./public/screenshot-summarizer-view.png)
 ![Playground Page](./public/screenshot-playground-view.png)
 
