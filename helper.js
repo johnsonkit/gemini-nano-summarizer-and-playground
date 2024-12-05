@@ -20,14 +20,14 @@ export function $(selector='') {
 }
 
 export async function checkAPIAvailability() {
-    let isSupportTranslationAPI = 'translation' in self && 'createTranslator' in self.translation;
-    let isSupportAiAPI = 'ai' in self && 'languageModel' in self.ai;
-    let isSupportSummarizerAPI = 'ai' in self && 'summarizer' in self.ai;
-    let isSupportPromptAPI = 'ai' in self && 'languageModel' in self.ai;
+    const isSupportTranslationAPI = 'translation' in self && 'createTranslator' in self.translation;
+    const isSupportAiAPI = 'ai' in self && 'languageModel' in self.ai;
+    const isSupportSummarizerAPI = 'ai' in self && 'summarizer' in self.ai;
+    const isSupportPromptAPI = 'ai' in self && 'languageModel' in self.ai;
     const { available: aiModelAvailable } = await ai.languageModel.capabilities();  
-    let isSupportAiModel = aiModelAvailable === 'readily';
+    const isSupportAiModel = aiModelAvailable === 'readily';
     const { available: summarizerCapabilities } = await self.ai.summarizer.capabilities();
-    let isSupportSummarizerCapabilities = summarizerCapabilities === 'readily';
+    const isSupportSummarizerCapabilities = summarizerCapabilities === 'readily';
     return {
         isSupportTranslationAPI,
         isSupportAiAPI,
@@ -101,4 +101,14 @@ export function copyText(elementId) {
         document.body.removeChild(textArea);
         console.log('Text copied to clipboard (fallback method)');
     }
+}
+
+export function debounce(func, delay) {
+    let timeoutId;
+    return (...args) => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {            
+            func(...args);
+        }, delay);
+    };
 }
