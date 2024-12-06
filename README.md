@@ -32,3 +32,7 @@ The application provides textarea and chat interface using Summarization API, Tr
 1. Enabled BypassPerfRequirement "Enables optimization guide on device" (It will download the Gemini Nano model in the background)
 1. Restart the browser
 1. Type `chrome://components` in the address bar and update "Optimization Guide On Device Model"
+
+## Notes
+
+I accidentally pushed an update to the origin/main branch that should have remained on the local dev branch. Please ignore the last commit. I apologize for any inconvenience this may have caused.
